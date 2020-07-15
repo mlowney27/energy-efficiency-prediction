@@ -1,7 +1,7 @@
 from flask import Flask, request
 app = Flask(__name__)
 
-
+#TODO use uwsgi server or something better than flask default
 @app.route('/', methods=['POST', 'GET'])
 def predict():
     """
