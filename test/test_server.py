@@ -4,7 +4,8 @@ import subprocess
 """
 for windows:
 192.168.99.100 = docker-machine ip default
-curl 192.168.99.100:5000/ -d "{\"foo\": \"bar\"}" -H 'Content-Type:application/json'
+curl 192.168.99.100:80/ -d "{\"foo\": \"bar\"}" -H 'Content-Type:application/json'
+curl 192.168.99.100:80/ -d "{\"X1\": \"10\", \"X2\": \"10\", \"X3\": \"10\", \"X4\": \"10\",\"X5\": \"10\", \"X6\": \"10\", \"X7\": \"10\", \"X8\": \"10\"}" -H 'Content-Type:application/json'
 """
 
 def test_server_request():
@@ -25,6 +26,8 @@ def test_server_request():
         print(e)
         return
     assert r.status_code == 200, "Unable to connect to server on {}".format(host)
+
+
 
 
 if __name__=="__main__":
